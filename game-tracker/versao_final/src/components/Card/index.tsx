@@ -33,20 +33,24 @@ const Card: React.FC<ICardProps> = ({
             <>
               <OriginalPrice>
                 $
-                {originalPrice}
+                {' '}
+                {originalPrice.toFixed(2).replace('.', ',')}
               </OriginalPrice>
               <br />
             </>
             )}
             <span>
               $
-              {actualPrice}
+              {' '}
+              {actualPrice.toFixed(2).replace('.', ',')}
             </span>
           </div>
 
           <div>
             <DisccountPercentage>
-              {actualPrice === 0 ? 'GRÁTIS' : (1 - (actualPrice / originalPrice)).toFixed(2)}
+              {actualPrice === 0 ? 'GRÁTIS' : `${(
+                ((originalPrice - actualPrice) / originalPrice) * 100
+              ).toFixed(2).replace('.', ',')} %`}
             </DisccountPercentage>
           </div>
         </div>

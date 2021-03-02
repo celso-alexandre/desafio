@@ -8,4 +8,17 @@
      Helvetica, sans-serif;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
+   --primario: #0b1641;
+   --secundario: #c70160;
+   transition: .5s ease-in-out;
+   scroll-behavior: smooth;
+ }
+
+ body {
+  background: linear-gradient(
+      45deg,
+      var(--primario) 0%,
+      var(--secundario) 100%
+   );
+   background-attachment: fixed;
  }
