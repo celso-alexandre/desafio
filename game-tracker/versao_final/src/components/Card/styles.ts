@@ -14,19 +14,24 @@ export const Container = styled.div`
 
    img {
       border-radius: 10px 10px 0 0;
+      object-fit: cover;
+      height: 14em;
+      width: auto;
    }
    
    & > h2 {
       font-size: 1.2em;
       font-weight: 500;
       padding: .6em .6em 0 1em;
-   }   
+   }
 `;
 
 export const CardFooter = styled.div`
    display: grid;
    grid-template-columns: 33% auto;
    margin: .7em 0 1em 0; 
+   height: 100%;
+   align-items: end;
 
    & > div:first-child {
       margin-left: 1em;
