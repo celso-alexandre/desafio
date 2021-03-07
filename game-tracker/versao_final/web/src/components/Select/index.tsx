@@ -1,5 +1,6 @@
 import React from 'react';
 import IOption from '../../interfaces/IOption';
+import { HTMLSelect } from './styles';
 
 interface IProps {
    options: IOption[];
@@ -8,10 +9,8 @@ interface IProps {
 }
 
 const Select: React.FC<IProps> = ({ options, selected, setSelected }: IProps) => {
-  console.log(selected);
-
   return (
-    <select value={selected} onChange={(e) => setSelected(e.target.value)}>
+    <HTMLSelect value={selected} onChange={(e) => setSelected(e.target.value)}>
       {options.map((option_) => (
         <option
           key={option_.value}
@@ -20,7 +19,7 @@ const Select: React.FC<IProps> = ({ options, selected, setSelected }: IProps) =>
           {option_.text}
         </option>
       ))}
-    </select>
+    </HTMLSelect>
   );
 };
 

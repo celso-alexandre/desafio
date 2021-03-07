@@ -1,24 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
 
 * {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
-   font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial,
-     Helvetica, sans-serif;
-   -webkit-font-smoothing: antialiased;
-   -moz-osx-font-smoothing: grayscale;
-   --primario: #0b1641;
-   --secundario: #c70160;
-   transition: .5s ease-in-out;
-   scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --primario: #0b1641;
+  --secundario: #c70160;
+  transition: .5s ease-in-out;
+  scroll-behavior: smooth;
  }
 
  body {
   background: linear-gradient(
-      45deg,
-      var(--primario) 0%,
-      var(--secundario) 100%
-   );
-   background-attachment: fixed;
+    45deg,
+    var(--primario) 0%,
+    var(--secundario) 100%
+  );
+  background-attachment: fixed;
  }
+
+ .react-search-box-dropdown {
+  background-color: #000 !important;
+}
+
+div input[type="text" i] {
+  margin: 0.4% 0 0 0.45%;
+  border: none;
+  padding: 0 0 0 2.5%;
+  color: #FFF;
+  background-color : #000;
+}
+
+.react-search-box-dropdown {
+  color: #FFF !important;
+  position: absolute;
+  margin: 2.46% 0 0 0.45%;
+}
+
+.react-search-box-dropdown ul li {
+  border: none;
+  background-color: #000 !important;
+}

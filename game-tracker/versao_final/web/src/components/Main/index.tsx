@@ -1,8 +1,7 @@
 import React, {
-  ChangeEvent, ChangeEventHandler, useCallback, useEffect, useState,
+  useEffect, useState,
 } from 'react';
 import ReactImageFallback from 'react-image-fallback';
-import { AxiosResponse } from 'axios';
 
 import Card from '../Card';
 
@@ -13,8 +12,6 @@ import ImgPlaceholder from '../../assets/steam.svg';
 import IGame from '../../interfaces/IGames';
 import Search from '../Search';
 import ISearchData from '../../interfaces/ISearchData';
-import IOption from '../../interfaces/IOption';
-import Select from '../Select';
 
 interface IQueryParams {
   pageNumber?: string;
@@ -63,23 +60,25 @@ const Main: React.FC = () => {
 
   return (
     <Container>
-      <Search
-        data={games.map((game) => {
-          return {
-            key: game.gameID,
-            value: game.title,
-          };
-        })}
-        term={searchTerm}
-        setTerm={setSearchTerm}
-      />
+      <div>
+        <Search
+          data={games.map((game) => {
+            return {
+              key: game.gameID,
+              value: game.title,
+            };
+          })}
+          term={searchTerm}
+          setTerm={setSearchTerm}
+        />
 
-      <select value={selectedOrder} onChange={handleSelectedOrder}>
-        <option value="disccount">% Desconto</option>
-        <option value="minor_price">Menor Preco</option>
-        <option value="greater_price">Maior Preco</option>
-        <option value="title">Título</option>
-      </select>
+        <select value={selectedOrder} onChange={handleSelectedOrder}>
+          <option value="disccount">% Desconto</option>
+          <option value="minor_price">Menor Preco</option>
+          <option value="greater_price">Maior Preco</option>
+          <option value="title">Título</option>
+        </select>
+      </div>
 
       {games?.map((game) => {
         return (
