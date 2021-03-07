@@ -15,10 +15,10 @@ const Search: React.FC<IProps> = ({ data, term, setTerm }: IProps) => {
     <ReactSearchBox
       placeholder="Pesquisar"
       data={data}
-      onSelect={(record: any) => console.log(record)}
-      onFocus={() => {
+      // onSelect={(record: any) => console.log(record)}
+      /* onFocus={() => {
         console.log('This function is called when is focussed');
-      }}
+      }} */
       onChange={(value: string) => setTerm(value)}
       fuseConfigs={{
         threshold: 0.05,

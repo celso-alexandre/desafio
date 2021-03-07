@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-   margin-top: 5%;
+   color: #FFF;
+   /* margin-top: 5%;
    width: 100%;
    display: flex;
    align-items: center;
@@ -12,11 +13,11 @@ export const Container = styled.div`
       font-size: 1.5em;
       color: #FFF;
       font-weight: 500;
-   }
+   } */
 `;
 
 export const CardContainer = styled.div`
-   display: flex;
+   /* display: flex;
    flex-wrap: wrap;
-   align-items: center;
+   align-items: center; */
 `;
