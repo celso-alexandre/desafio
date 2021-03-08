@@ -2,7 +2,7 @@ import React from 'react';
 import { FaSearch } from 'react-icons/fa';
 import IGame from '../../interfaces/IGames';
 import ISearchData from '../../interfaces/ISearchData';
-import { Container, SearchBox, SearchIcon } from './styles';
+import { Container, SearchIcon } from './styles';
 
 interface IProps {
    data: ISearchData[];
@@ -14,19 +14,13 @@ const Search: React.FC<IProps> = ({ data, term, setTerm }: IProps) => {
   return (
     <Container>
       <SearchIcon />
-      <SearchBox
+      <input
+        type="text"
         placeholder="Pesquisar"
-        data={data}
-      // onSelect={(record: any) => console.log(record)}
-      /* onFocus={() => {
-        console.log('This function is called when is focussed');
-      }} */
-        onChange={(value: string) => setTerm(value)}
-        fuseConfigs={{
-          threshold: 0.05,
-        }}
+        onChange={(e) => setTerm(e.target.value)}
         value={term}
       />
+      <button type="button" onClick={() => setTerm('')}>x</button>
     </Container>
   );
 };

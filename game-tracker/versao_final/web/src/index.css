@@ -20,27 +20,28 @@
     var(--secundario) 100%
   );
   background-attachment: fixed;
- }
-
- .react-search-box-dropdown {
-  background-color: #000 !important;
 }
 
-div input[type="text" i] {
-  margin: 0.4% 0 0 0.45%;
+/* div input[type="text" i] {
+  min-width: 20%;
+  max-height: 85%;
+  margin: 0.2% 0 0 3.3%;
   border: none;
-  padding: 0 0 0 2.5%;
-  color: #FFF;
-  background-color : #000;
+  padding: 0 0 0 40px;
+  color: #8ea6be;
+  background-color : #0a143e;
 }
 
 .react-search-box-dropdown {
+  background-color: #0a143e !important;
   color: #FFF !important;
   position: absolute;
-  margin: 2.46% 0 0 0.45%;
+  margin: 0.2% 0 0 20%;
+  width: 20% !important;
+  min-width: 210px;
 }
 
 .react-search-box-dropdown ul li {
   border: none;
-  background-color: #000 !important;
-}
+  background-color: #0a143e !important;
+} */

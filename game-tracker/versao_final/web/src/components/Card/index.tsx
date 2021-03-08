@@ -9,6 +9,7 @@ interface ICardProps {
    image: any;
    originalPrice?: number;
    actualPrice: number
+   disccount: number;
 }
 
 const Card: React.FC<ICardProps> = ({
@@ -16,6 +17,7 @@ const Card: React.FC<ICardProps> = ({
   image,
   actualPrice,
   originalPrice = actualPrice,
+  disccount,
 }: ICardProps) => {
   return (
     <Container>
@@ -36,9 +38,9 @@ const Card: React.FC<ICardProps> = ({
                 {' '}
                 {originalPrice.toFixed(2).replace('.', ',')}
               </OriginalPrice>
-              <br />
             </>
             )}
+            <br />
             <span>
               $
               {' '}
@@ -48,9 +50,7 @@ const Card: React.FC<ICardProps> = ({
 
           <div>
             <DisccountPercentage>
-              {actualPrice === 0 ? 'GRÁTIS' : `${(
-                ((originalPrice - actualPrice) / originalPrice) * 100
-              ).toFixed(0).replace('.', ',')} %`}
+              {actualPrice === 0 ? 'GRÁTIS' : `${disccount.toFixed(0)}%`}
             </DisccountPercentage>
           </div>
         </div>

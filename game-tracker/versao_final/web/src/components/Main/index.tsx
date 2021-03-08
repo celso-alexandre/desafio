@@ -27,7 +27,7 @@ const Main: React.FC = () => {
   const [selectedOrder, setSelectedOrder] = useState('minor_price');
 
   const loadGames = () => {
-    const url = 'http://localhost:3333/deals';
+    const url = 'http://192.168.1.27:3333/deals';
     api.get<IGame[]>(url, {
       params: {
         pageNumber: 0,
@@ -60,6 +60,7 @@ const Main: React.FC = () => {
 
   return (
     <Container>
+      <h1>Ofertas</h1>
       <div>
         <Search
           data={games.map((game) => {
@@ -72,6 +73,7 @@ const Main: React.FC = () => {
           setTerm={setSearchTerm}
         />
 
+        {/* <span>Ordenar por: </span> */}
         <select value={selectedOrder} onChange={handleSelectedOrder}>
           <option value="disccount">% Desconto</option>
           <option value="minor_price">Menor Preco</option>
@@ -80,18 +82,37 @@ const Main: React.FC = () => {
         </select>
       </div>
 
-      {games?.map((game) => {
-        return (
-          <div key={game.gameID}>
-            <h1>{game.title}</h1>
-            <p>{game.salePrice}</p>
-            <p>
-              {game.disccount}
-              %
-            </p>
-          </div>
-        );
-      })}
+      <CardContainer>
+        {games?.map((game) => {
+          const {
+            disccount,
+            normalPriceFloat,
+            salePriceFloat,
+            title,
+            thumbs,
+            gameID,
+          } = game;
+
+          const [src, ...fallbackImages] = thumbs;
+
+          return (
+            <Card
+              actualPrice={salePriceFloat}
+              originalPrice={normalPriceFloat}
+              disccount={disccount}
+              title={title}
+              key={gameID}
+              image={(
+                <ReactImageFallback
+                  src={src}
+                  fallbackImage={fallbackImages}
+                  alt="game thumbnail"
+                />
+             )}
+            />
+          );
+        })}
+      </CardContainer>
     </Container>
   );
 };
